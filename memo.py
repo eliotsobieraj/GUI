@@ -1,5 +1,18 @@
 import random
 
+def affichag(tab):
+    for i in range(len(tab)):
+        print(" ".join(tab[i]))
+
+def tab_secret():
+    tab = []
+    line=[]
+    for i in range(4):
+        line=[]
+        for x in range(5):
+            line.append("?")
+        tab.append(line)
+
 
 def memo_table():
     line = []
@@ -16,6 +29,9 @@ def memo_table():
 
 def memo_main():
     tab_val = memo_table()
+    count = 20
+
+    tab_sec= tab_secret()
     xval, yval = 0, 0
     xval = int(input("entrez le x de la veleur"))
     yval = int(input("entrez le y de la valeur"))
@@ -23,8 +39,9 @@ def memo_main():
     xval = int(input("entrez le x de la veleur"))
     yval = int(input("entrez le y de la valeur"))
     values2 = [yval, xval]
-    if tab_val[values1[0]][values1[1]] == tab_val[values2[0]][values2[1]]:
-        print("")
+    print(tab_val)
+    if tab_val[int(values1[0])][int(values1[1])] == tab_val[int(values2[0])][int(values2[1])]:
+        print("gagné")
 
 
 
